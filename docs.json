@@ -7,6 +7,9 @@
     "light": "#07C983",
     "dark": "#15803D"
   },
+  "icons": {
+    "library": "lucide"
+  },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
@@ -50,7 +53,7 @@
         {
           "anchor": "Documentation",
           "href": "https://innovai-solutions.com/docs",
-          "icon": "book-open-cover"
+          "icon": "book-open-text"
         },
         {
           "anchor": "Blog",
@@ -60,7 +63,7 @@
         {
           "anchor": "Support",
           "href": "mailto:support@innovai-solutions.com",
-          "icon": "envelope"
+          "icon": "mail"
         }
       ]
     }
