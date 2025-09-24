@@ -5,38 +5,124 @@ slug: "rag-intelligent"
 image: "/images/rag-hero.jpg"
 ---
 
+<Frame>
+  <img src="/images/rag-hero.jpg" alt="RAG Intelligent - Recherche documentaire augmentée" />
+</Frame>
+
 # RAG Intelligent
 
 Améliorez vos applications IA avec notre système de Retrieval-Augmented Generation qui combine recherche sémantique et génération de réponses contextuelles.
 
-## Fonctionnement
+## Fonctionnement technique
 
-Le RAG intelligent fonctionne en deux étapes complémentaires :
+<AccordionGroup>
+  <Accordion title="Recherche sémantique avancée">
+    Notre système analyse vos documents pour identifier les informations les plus pertinentes grâce à des embeddings vectoriels et des algorithmes de similarité.
 
-1. **Recherche sémantique** : Recherche dans vos documents les informations les plus pertinentes
-2. **Génération augmentée** : Utilise ces informations pour générer des réponses précises et contextuelles
+    <Check>
+      Recherche précise dans tous types de documents : PDF, Word, Excel, code source.
+    </Check>
+  </Accordion>
+
+  <Accordion title="Génération augmentée contextuelle">
+    Les informations récupérées servent de contexte pour générer des réponses précises et personnalisées adaptées à votre domaine.
+
+    <Check>
+      Réduction significative des réponses génériques ou incorrectes.
+    </Check>
+  </Accordion>
+</AccordionGroup>
 
 ## Avantages clés
 
-- **Précision accrue** : Réponses basées sur vos données réelles
-- **Réduction des hallucinations** : Moins de réponses inventées ou incorrectes
-- **Contexte personnalisé** : Réponses adaptées à votre domaine d'activité
-- **Mise à jour en temps réel** : Intégration automatique de nouveaux documents
+<CardGroup cols={2}>
+  <Card title="Précision garantie" icon="target">
+    Réponses basées exclusivement sur vos données réelles et vérifiées.
+  </Card>
+  <Card title="Sécurité maximale" icon="shield">
+    Toutes vos données restent sur vos serveurs, jamais externalisées.
+  </Card>
+  <Card title="Mises à jour automatiques" icon="sync">
+    Intégration transparente de nouveaux documents sans interruption.
+  </Card>
+  <Card title="Performance optimisée" icon="zap">
+    Recherche instantanée même dans de gros volumes de données.
+  </Card>
+</CardGroup>
 
 ## Technologies utilisées
 
-- **Base de données vectorielle** : Stockage et recherche sémantique efficace
-- **Modèles d'embedding** : Transformation du texte en représentations vectorielles
-- **Algorithmes de similarité** : Recherche des documents les plus pertinents
-- **APIs RESTful** : Intégration transparente avec vos applications
+<Tabs>
+  <Tab title="Base vectorielle">
+    - **Pinecone/Chroma** : Stockage et recherche vectorielle haute performance
+    - **Embeddings OpenAI** : Transformation sémantique du texte
+    - **Indexation automatique** : Mise à jour en temps réel des documents
+  </Tab>
 
-## Cas d'usage
+  <Tab title="Modèles IA">
+    - **Llama Index** : Framework de recherche documentaire
+    - **GPT-4/Llama 3** : Génération de réponses contextuelles
+    - **Fine-tuning** : Adaptation à votre vocabulaire métier
+  </Tab>
 
-- **Chatbots spécialisés** : Réponses basées sur votre documentation
-- **Assistants virtuels** : Support technique et commercial personnalisé
-- **Systèmes de recommandation** : Suggestions basées sur l'historique utilisateur
-- **Analyse documentaire** : Recherche intelligente dans de gros volumes de données
+  <Tab title="APIs & Intégration">
+    - **RESTful APIs** : Intégration transparente
+    - **SDK Python/Node.js** : Développement facilité
+    - **Webhooks** : Notifications en temps réel
+  </Tab>
+</Tabs>
+
+## Applications pratiques
+
+<Steps>
+  <Step title="Chatbots spécialisés">
+    Réponses basées sur votre documentation technique ou commerciale.
+  </Step>
+  <Step title="Assistants virtuels">
+    Support technique et commercial personnalisé 24/7.
+  </Step>
+  <Step title="Analyse documentaire">
+    Recherche intelligente dans vos bases de connaissances.
+  </Step>
+  <Step title="Systèmes experts">
+    Réponses précises pour vos domaines métier spécifiques.
+  </Step>
+</Steps>
+
+## Exemple d'utilisation
+
+<Expandable title="Voir un exemple concret">
+  **Question utilisateur :** "Quelle est la procédure de validation des commandes internationales ?"
+
+  **Documents analysés :** Manuel qualité, procédures douanières, réglementations internationales
+
+  **Réponse générée :**
+  "Selon la procédure Q-PROC-INT-001, la validation des commandes internationales nécessite :
+  1. Vérification de la conformité douanière (document DOUAN-2024)
+  2. Validation des incoterms applicables
+  3. Contrôle des licences d'exportation requises
+
+  Durée estimée : 2-3 jours ouvrés."
+</Expandable>
 
 <Note>
-Le RAG intelligent nécessite une base de documents structurée pour des performances optimales.
+Le RAG intelligent nécessite une base de documents structurée pour des performances optimales. Nous accompagnons la mise en place de votre index documentaire.
 </Note>
+
+<Tip>
+Pour maximiser l'efficacité, organisez vos documents avec des métadonnées riches (auteur, date, catégorie, mots-clés).
+</Tip>
+
+## Intégration avec vos services
+
+<CardGroup cols={3}>
+  <Card title="Chatbot IA" icon="message-circle" href="/chatbot-ia">
+    Enrichissez vos assistants conversationnels avec des réponses documentées.
+  </Card>
+  <Card title="Analyse multimodale" icon="eye" href="/analyse-multimodale">
+    Combinez recherche textuelle et analyse d'images/audio.
+  </Card>
+  <Card title="Sécurité" icon="shield" href="/security">
+    Chiffrement et contrôle d'accès intégrés.
+  </Card>
+</CardGroup>

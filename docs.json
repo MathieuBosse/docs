@@ -29,9 +29,9 @@
             "pages": [
               "chatbot-ia",
               "rag-intelligent",
-              "traitement-audio",
-              "generation-images",
-              "analyse-multimodale"
+              "fine-tuning",
+              "multimedia-ia",
+              "roles"
             ]
           }
         ]
