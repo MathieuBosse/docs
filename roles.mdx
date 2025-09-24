@@ -6,144 +6,245 @@ image: "/images/roles-hero.jpg"
 ---
 
 <Frame>
-  <img src="/images/roles-hero.jpg" alt="Agents IA Spécialisés - Création et adaptation par secteur" />
+  <img src="/images/roles-hero.jpg" alt="Agents IA Spécialisés - Personnalisation par secteur d'activité" />
 </Frame>
 
 # Agents IA Spécialisés
 
 Créez des agents IA parfaitement adaptés à votre secteur d'activité, avec des compétences, un langage et des comportements sur mesure pour chaque cas d'usage professionnel.
 
-## Concept des agents spécialisés
+## API de création d'agents
 
-<AccordionGroup>
-  <Accordion title="Qu'est-ce qu'un agent IA spécialisé ?">
-    Un agent IA est un assistant virtuel programmé pour exceller dans un domaine spécifique, avec des connaissances, des comportements et des capacités adaptés à votre secteur.
+<ParamField path="agent_type" type="string" required>
+  Type d'agent à créer : "customer_service", "sales", "technical_support", "compliance", "medical_triage"
+</ParamField>
 
-    <Check>
-      Expertise pointue, langage métier, automatisation intelligente des processus spécifiques.
-    </Check>
-  </Accordion>
+<ParamField body="sector_config" type="object" required>
+  Configuration spécifique au secteur d'activité
 
-  <Accordion title="Pourquoi créer des agents spécialisés ?">
-    Les agents généralistes manquent de contexte métier. Les agents spécialisés apportent expertise sectorielle, efficacité opérationnelle et expérience utilisateur optimale.
+  <Expandable title="Configuration par secteur">
+    <ResponseField name="banking" type="object">
+      Configuration pour le secteur bancaire
 
-    <Check>
-      Productivité accrue, erreurs réduites, satisfaction client améliorée.
-    </Check>
-  </Accordion>
-</AccordionGroup>
+      <Expandable title="Paramètres bancaires">
+        <ResponseField name="compliance_level" type="string" default="strict">
+          Niveau de conformité réglementaire : "basic", "strict", "enhanced"
+        </ResponseField>
+        <ResponseField name="risk_models" type="array">
+          Liste des modèles de risque à intégrer
+        </ResponseField>
+        <ResponseField name="document_types" type="array">
+          Types de documents à traiter : "kyc", "credit_reports", "transactions"
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
 
-## Agents par secteur
+    <ResponseField name="healthcare" type="object">
+      Configuration pour le secteur médical
+
+      <Expandable title="Paramètres médicaux">
+        <ResponseField name="hipaa_compliant" type="boolean" default="true">
+          Respect obligatoire des normes HIPAA
+        </ResponseField>
+        <ResponseField name="specialties" type="array">
+          Spécialités médicales couvertes
+        </ResponseField>
+        <ResponseField name="emergency_protocols" type="boolean">
+          Activation des protocoles d'urgence
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ParamField>
+
+<ParamField query="training_data_size" type="integer" default="1000">
+  Volume minimum de données d'entraînement (500-10000 exemples)
+</ParamField>
+
+<RequestExample>
+```bash Création d'agent
+curl -X POST 'https://api.privai.com/agents/create' \
+  -H 'Authorization: Bearer YOUR_API_KEY' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "agent_type": "customer_service",
+    "sector_config": {
+      "banking": {
+        "compliance_level": "strict",
+        "risk_models": ["credit_scoring", "fraud_detection"],
+        "document_types": ["kyc", "transactions"]
+      }
+    },
+    "training_data_size": 2000,
+    "custom_behaviors": {
+      "tone": "professional_friendly",
+      "response_time": "< 5 seconds",
+      "escalation_triggers": ["complaints", "security_issues"]
+    }
+  }'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Agent créé
+{
+  "agent_id": "agent-bank-cs-001",
+  "status": "training",
+  "estimated_completion": "2024-01-16T14:00:00Z",
+  "capabilities": {
+    "languages": ["fr", "en", "es"],
+    "channels": ["chat", "voice", "email"],
+    "integrations": ["crm", "ticketing_system"],
+    "specializations": ["credit_cards", "loans", "savings"]
+  },
+  "performance_metrics": {
+    "accuracy_target": 0.95,
+    "response_time_target": 3000,
+    "escalation_rate_target": 0.05
+  }
+}
+```
+</ResponseExample>
+
+## Catalogue d'agents prédéfinis
 
 <Tabs>
-  <Tab title="Banque & Finance">
-    - **Agent Crédit** : Analyse dossiers, évaluation risques, recommandations
-    - **Agent Conformité** : Vérification réglementaire, alertes compliance
-    - **Agent Commercial** : Qualification leads, propositions personnalisées
-    - **Agent Support** : Résolution problèmes clients, guidance produits
-  </Tab>
+<Tab title="🏦 Banque & Finance">
+  <CardGroup cols={2}>
+    <Card title="Agent Crédit Immobilier" icon="home">
+      Analyse dossiers, scoring automatique, propositions personnalisées
+    </Card>
+    <Card title="Agent Conformité RGPD" icon="shield">
+      Vérification conformité, audit automatisé, alertes violations
+    </Card>
+    <Card title="Agent Commercial Digital" icon="trending-up">
+      Qualification leads, recommandations produits, suivi conversion
+    </Card>
+    <Card title="Agent Support Client" icon="headphones">
+      Résolution incidents, guidance produits, satisfaction monitoring
+    </Card>
+  </CardGroup>
+</Tab>
 
-  <Tab title="Santé & Médical">
-    - **Agent Administratif** : Prise RDV, gestion dossiers patients
-    - **Agent Triage** : Évaluation symptômes, orientation soins
-    - **Agent Recherche** : Analyse publications médicales, protocoles
-    - **Agent Prévention** : Conseils santé, suivi thérapeutique
-  </Tab>
+<Tab title="🏥 Santé & Médical">
+  <CardGroup cols={2}>
+    <Card title="Agent Triage Urgences" icon="ambulance">
+      Évaluation symptômes, priorisation soins, orientation médicale
+    </Card>
+    <Card title="Agent Administrative" icon="calendar">
+      Gestion RDV, optimisation planning, rappels automatiques
+    </Card>
+    <Card title="Agent Recherche Clinique" icon="microscope">
+      Analyse publications, protocoles traitement, veille scientifique
+    </Card>
+    <Card title="Agent Prévention Santé" icon="heartbeat">
+      Conseils personnalisés, suivi thérapeutique, éducation patient
+    </Card>
+  </CardGroup>
+</Tab>
 
-  <Tab title="Commerce & Retail">
-    - **Agent Ventes** : Recommandations produits, upselling intelligent
-    - **Agent Service Client** : Traitement réclamations, support technique
-    - **Agent Supply Chain** : Gestion stocks, optimisation logistique
-    - **Agent Marketing** : Analyse tendances, campagnes personnalisées
-  </Tab>
-
-  <Tab title="Industrie & Manufacturing">
-    - **Agent Maintenance** : Diagnostic pannes, planning préventif
-    - **Agent Qualité** : Contrôle processus, détection anomalies
-    - **Agent Supply** : Gestion fournisseurs, optimisation achats
-    - **Agent Sécurité** : Monitoring risques, conformité réglementaire
-  </Tab>
+<Tab title="🏭 Industrie 4.0">
+  <CardGroup cols={2}>
+    <Card title="Agent Maintenance Prédictive" icon="cogs">
+      Diagnostic pannes, planning préventif, optimisation pièces
+    </Card>
+    <Card title="Agent Qualité & Contrôle" icon="check-circle">
+      Inspection automatique, détection anomalies, reporting qualité
+    </Card>
+    <Card title="Agent Supply Chain" icon="truck">
+      Gestion stocks, optimisation achats, prévision demande
+    </Card>
+    <Card title="Agent Sécurité Industrielle" icon="hard-hat">
+      Monitoring risques, conformité réglementaire, alertes sécurité
+    </Card>
+  </CardGroup>
+</Tab>
 </Tabs>
 
-## Capacités des agents
+## Processus de déploiement
+
+<Steps>
+<Step title="Sélection du secteur">
+  Choisissez votre domaine d'activité et cas d'usage principal.
+
+  <Check>
+    Agent prédéfini disponible ou création sur mesure possible
+  </Check>
+</Step>
+
+<Step title="Configuration personnalisée">
+  Adaptez les comportements, le langage et les intégrations à vos besoins.
+
+  ```json Configuration exemple
+  {
+    "behavior": {
+      "tone": "professional_warm",
+      "escalation_threshold": "high",
+      "autonomy_level": "supervised"
+    },
+    "integrations": {
+      "crm": "salesforce",
+      "ticketing": "zendesk",
+      "knowledge_base": "confluence"
+    }
+  }
+  ```
+
+  <Warning>
+    Testez toujours les agents en mode supervision avant déploiement autonome complet.
+  </Warning>
+</Step>
+
+<Step title="Entraînement et validation">
+  Fine-tuning sur vos données et validation des performances.
+
+  <ResponseField name="training_status" type="object">
+    État d'avancement de l'entraînement de l'agent
+
+    <Expandable title="Métriques d'entraînement">
+      <ResponseField name="accuracy" type="number">
+        Précision des réponses sur données de validation
+      </ResponseField>
+      <ResponseField name="response_consistency" type="number">
+        Cohérence des réponses dans différents scénarios
+      </ResponseField>
+      <ResponseField name="safety_score" type="number">
+        Score de sécurité et conformité réglementaire
+      </ResponseField>
+    </Expandable>
+  </ResponseField>
+</Step>
+
+<Step title="Déploiement progressif">
+  Mise en production avec monitoring continu et optimisation.
+
+  <Check>
+    Déploiement en mode shadow pour validation avant activation complète
+  </Check>
+</Step>
+</Steps>
+
+## Métriques de performance
 
 <CardGroup cols={2}>
-  <Card title="Apprentissage adaptatif" icon="brain">
-    Évolution continue basée sur les interactions et retours utilisateurs.
+  <Card title="Précision sectorielle" icon="target">
+    **95%** de réponses conformes aux standards métier
   </Card>
-  <Card title="Intégration système" icon="plug">
-    Connexion transparente avec vos outils métier existants.
+  <Card title="Temps de résolution" icon="clock">
+    **-70%** de durée moyenne de traitement
   </Card>
-  <Card title="Personnalisation avancée" icon="user-cog">
-    Adaptation du langage, du ton et des comportements à votre marque.
+  <Card title="Satisfaction utilisateur" icon="smile">
+    **+50%** d'indice de satisfaction client
   </Card>
-  <Card title="Multimodalité" icon="eye">
-    Interaction voix, texte, image selon les besoins métier.
+  <Card title="ROI moyen" icon="chart-line">
+    **250%** de retour sur investissement annuel
   </Card>
 </CardGroup>
 
-## Processus de création
-
-<Steps>
-  <Step title="Définition des besoins">
-    Analyse de vos processus métier et identification des cas d'usage prioritaires.
-  </Step>
-  <Step title="Conception de l'agent">
-    Définition des compétences, du langage et des comportements attendus.
-  </Step>
-  <Step title="Entraînement spécialisé">
-    Fine-tuning sur vos données métier et scénarios spécifiques.
-  </Step>
-  <Step title="Tests et validation">
-    Évaluation des performances dans des conditions réelles.
-  </Step>
-  <Step title="Déploiement progressif">
-    Mise en production avec monitoring et optimisation continue.
-  </Step>
-</Steps>
-
-## Exemples d'agents réussis
-
-<Expandable title="Agent bancaire de crédit immobilier">
-  **Contexte :** Banque spécialisée dans le crédit immobilier
-
-  **Capacités :**
-  - Analyse automatique des dossiers de prêt
-  - Évaluation des risques basée sur l'historique
-  - Génération de propositions personnalisées
-  - Réponses aux questions clients en langage clair
-
-  **Résultats :**
-  - **Temps de traitement** : -70% (de 3 jours à 4h)
-  - **Satisfaction client** : +40%
-  - **Taux d'approbation** : +25%
-</Expandable>
-
 <Note>
-  Chaque agent est entraîné sur vos données spécifiques et respecte vos standards de sécurité et confidentialité.
+  Tous les agents respectent vos politiques de sécurité et peuvent être déployés on-premise ou dans votre cloud privé.
 </Note>
 
 <Tip>
-  Commencez par identifier vos processus les plus chronophages ou sujets aux erreurs pour maximiser l'impact des agents IA.
+  Commencez par automatiser vos processus les plus répétitifs pour mesurer rapidement l'impact des agents IA.
 </Tip>
-
-## Technologies sous-jacentes
-
-- **Modèles de base** : Llama 3.1, GPT-4, modèles spécialisés par secteur
-- **Fine-tuning** : Adaptation précise aux besoins métier
-- **RAG intégré** : Accès à la base de connaissances documentaire
-- **Multimodalité** : Interaction enrichie selon les cas d'usage
-
-## Intégration avec vos services
-
-<CardGroup cols={3}>
-  <Card title="Chatbot IA" icon="message-circle" href="/chatbot-ia">
-    Interface conversationnelle pour vos agents spécialisés.
-  </Card>
-  <Card title="RAG Intelligent" icon="search" href="/rag-intelligent">
-    Base de connaissances pour expertise métier approfondie.
-  </Card>
-  <Card title="IA Multimédia" icon="image" href="/multimedia-ia">
-    Capacités vocales et visuelles pour interactions enrichies.
-  </Card>
-</CardGroup>
