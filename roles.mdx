@@ -1,250 +1,117 @@
 ---
-title: "🎭 Agents IA Spécialisés"
-description: "Créez et adaptez des agents IA sur mesure pour chaque secteur d'activité et cas d'usage"
-slug: "roles"
-image: "/images/roles-hero.jpg"
+title: "🤖 Assistants IA Sur Mesure"
+description: "Créez des assistants virtuels adaptés à chaque métier de votre entreprise"
+slug: "custom-ai-agents"
+image: "/images/ai-agents-hero.jpg"
 ---
 
-<Frame>
-  <img src="/images/roles-hero.jpg" alt="Agents IA Spécialisés - Personnalisation par secteur d'activité" />
+<Frame caption="Des assistants IA conçus pour chaque rôle de votre équipe">
+  <img src="/images/ai-agents-hero.jpg" alt="Assistants IA personnalisés pour tous vos métiers" />
 </Frame>
 
-# Agents IA Spécialisés
+# Des assistants qui boostent chaque rôle
 
-Créez des agents IA parfaitement adaptés à votre secteur d'activité, avec des compétences, un langage et des comportements sur mesure pour chaque cas d'usage professionnel.
+Votre entreprise est unique, avec des métiers, des tâches et des besoins qui lui sont propres. Nos **assistants IA sur mesure** ne sont pas des solutions génériques : ce sont des **partenaires virtuels** taillés pour chaque rôle, qui parlent votre langage et accélèrent votre succès. Créez-en autant que vous voulez pour rendre chaque équipe plus efficace !
 
-## API de création d'agents
+---
 
-<ParamField path="agent_type" type="string" required>
-  Type d'agent à créer : "customer_service", "sales", "technical_support", "compliance", "medical_triage"
-</ParamField>
+## 🌟 Un assistant pour chaque métier
 
-<ParamField body="sector_config" type="object" required>
-  Configuration spécifique au secteur d'activité
-
-  <Expandable title="Configuration par secteur">
-    <ResponseField name="banking" type="object">
-      Configuration pour le secteur bancaire
-
-      <Expandable title="Paramètres bancaires">
-        <ResponseField name="compliance_level" type="string" default="strict">
-          Niveau de conformité réglementaire : "basic", "strict", "enhanced"
-        </ResponseField>
-        <ResponseField name="risk_models" type="array">
-          Liste des modèles de risque à intégrer
-        </ResponseField>
-        <ResponseField name="document_types" type="array">
-          Types de documents à traiter : "kyc", "credit_reports", "transactions"
-        </ResponseField>
-      </Expandable>
-    </ResponseField>
-
-    <ResponseField name="healthcare" type="object">
-      Configuration pour le secteur médical
-
-      <Expandable title="Paramètres médicaux">
-        <ResponseField name="hipaa_compliant" type="boolean" default="true">
-          Respect obligatoire des normes HIPAA
-        </ResponseField>
-        <ResponseField name="specialties" type="array">
-          Spécialités médicales couvertes
-        </ResponseField>
-        <ResponseField name="emergency_protocols" type="boolean">
-          Activation des protocoles d'urgence
-        </ResponseField>
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ParamField>
-
-<ParamField query="training_data_size" type="integer" default="1000">
-  Volume minimum de données d'entraînement (500-10000 exemples)
-</ParamField>
-
-<RequestExample>
-```bash Création d'agent
-curl -X POST 'https://api.privai.com/agents/create' \
-  -H 'Authorization: Bearer YOUR_API_KEY' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "agent_type": "customer_service",
-    "sector_config": {
-      "banking": {
-        "compliance_level": "strict",
-        "risk_models": ["credit_scoring", "fraud_detection"],
-        "document_types": ["kyc", "transactions"]
-      }
-    },
-    "training_data_size": 2000,
-    "custom_behaviors": {
-      "tone": "professional_friendly",
-      "response_time": "< 5 seconds",
-      "escalation_triggers": ["complaints", "security_issues"]
-    }
-  }'
-```
-</RequestExample>
-
-<ResponseExample>
-```json Agent créé
-{
-  "agent_id": "agent-bank-cs-001",
-  "status": "training",
-  "estimated_completion": "2024-01-16T14:00:00Z",
-  "capabilities": {
-    "languages": ["fr", "en", "es"],
-    "channels": ["chat", "voice", "email"],
-    "integrations": ["crm", "ticketing_system"],
-    "specializations": ["credit_cards", "loans", "savings"]
-  },
-  "performance_metrics": {
-    "accuracy_target": 0.95,
-    "response_time_target": 3000,
-    "escalation_rate_target": 0.05
-  }
-}
-```
-</ResponseExample>
-
-## Catalogue d'agents prédéfinis
+Pas de limites ! Que vous ayez besoin d’un assistant pour vos commerciaux, vos créatifs ou vos gestionnaires, nous créons des templates IA qui s’adaptent parfaitement à chaque rôle.
 
 <Tabs>
-<Tab title="🏦 Banque & Finance">
-  <CardGroup cols={2}>
-    <Card title="Agent Crédit Immobilier" icon="home">
-      Analyse dossiers, scoring automatique, propositions personnalisées
-    </Card>
-    <Card title="Agent Conformité RGPD" icon="shield">
-      Vérification conformité, audit automatisé, alertes violations
-    </Card>
-    <Card title="Agent Commercial Digital" icon="trending-up">
-      Qualification leads, recommandations produits, suivi conversion
-    </Card>
-    <Card title="Agent Support Client" icon="headphones">
-      Résolution incidents, guidance produits, satisfaction monitoring
-    </Card>
-  </CardGroup>
+<Tab title="💼 Commercial">
+💬 *Un assistant qui charme vos clients et booste vos ventes.*  
+
+- Réponses instantanées aux prospects  
+- Suivi des leads  
+- Proposition d’offres personnalisées  
+- Gestion des relances
 </Tab>
 
-<Tab title="🏥 Santé & Médical">
-  <CardGroup cols={2}>
-    <Card title="Agent Triage Urgences" icon="ambulance">
-      Évaluation symptômes, priorisation soins, orientation médicale
-    </Card>
-    <Card title="Agent Administrative" icon="calendar">
-      Gestion RDV, optimisation planning, rappels automatiques
-    </Card>
-    <Card title="Agent Recherche Clinique" icon="microscope">
-      Analyse publications, protocoles traitement, veille scientifique
-    </Card>
-    <Card title="Agent Prévention Santé" icon="heartbeat">
-      Conseils personnalisés, suivi thérapeutique, éducation patient
-    </Card>
-  </CardGroup>
+<Tab title="🎨 Marketing & Création">
+💬 *Un allié pour brainstormer, rédiger et organiser vos campagnes.*  
+
+- Idées de contenus créatifs  
+- Rédaction de posts et emails  
+- Planification des campagnes  
+- Analyse des tendances
 </Tab>
 
-<Tab title="🏭 Industrie 4.0">
-  <CardGroup cols={2}>
-    <Card title="Agent Maintenance Prédictive" icon="cogs">
-      Diagnostic pannes, planning préventif, optimisation pièces
-    </Card>
-    <Card title="Agent Qualité & Contrôle" icon="check-circle">
-      Inspection automatique, détection anomalies, reporting qualité
-    </Card>
-    <Card title="Agent Supply Chain" icon="truck">
-      Gestion stocks, optimisation achats, prévision demande
-    </Card>
-    <Card title="Agent Sécurité Industrielle" icon="hard-hat">
-      Monitoring risques, conformité réglementaire, alertes sécurité
-    </Card>
-  </CardGroup>
+<Tab title="📋 Gestion administrative">
+💬 *Un expert virtuel pour simplifier vos tâches quotidiennes.*  
+
+- Organisation des agendas  
+- Gestion des factures  
+- Suivi des contrats  
+- Automatisation des rapports
 </Tab>
 </Tabs>
 
-## Processus de déploiement
+---
+
+## 🚀 Comment ça fonctionne ?
 
 <Steps>
-<Step title="Sélection du secteur">
-  Choisissez votre domaine d'activité et cas d'usage principal.
-
-  <Check>
-    Agent prédéfini disponible ou création sur mesure possible
-  </Check>
+<Step title="1. Choisir vos rôles">
+  On discute avec vous pour identifier les métiers et tâches à optimiser.
 </Step>
 
-<Step title="Configuration personnalisée">
-  Adaptez les comportements, le langage et les intégrations à vos besoins.
-
-  ```json Configuration exemple
-  {
-    "behavior": {
-      "tone": "professional_warm",
-      "escalation_threshold": "high",
-      "autonomy_level": "supervised"
-    },
-    "integrations": {
-      "crm": "salesforce",
-      "ticketing": "zendesk",
-      "knowledge_base": "confluence"
-    }
-  }
-  ```
-
-  <Warning>
-    Testez toujours les agents en mode supervision avant déploiement autonome complet.
-  </Warning>
+<Step title="2. Personnaliser vos assistants">
+  Chaque assistant est conçu pour adopter le style et les besoins de votre équipe.
 </Step>
 
-<Step title="Entraînement et validation">
-  Fine-tuning sur vos données et validation des performances.
-
-  <ResponseField name="training_status" type="object">
-    État d'avancement de l'entraînement de l'agent
-
-    <Expandable title="Métriques d'entraînement">
-      <ResponseField name="accuracy" type="number">
-        Précision des réponses sur données de validation
-      </ResponseField>
-      <ResponseField name="response_consistency" type="number">
-        Cohérence des réponses dans différents scénarios
-      </ResponseField>
-      <ResponseField name="safety_score" type="number">
-        Score de sécurité et conformité réglementaire
-      </ResponseField>
-    </Expandable>
-  </ResponseField>
+<Step title="3. Tester et valider">
+  On s’assure que chaque assistant répond parfaitement à vos attentes.
 </Step>
 
-<Step title="Déploiement progressif">
-  Mise en production avec monitoring continu et optimisation.
-
-  <Check>
-    Déploiement en mode shadow pour validation avant activation complète
-  </Check>
+<Step title="4. Lancer et ajuster">
+  Vos assistants sont déployés progressivement, avec des ajustements si besoin.
 </Step>
 </Steps>
 
-## Métriques de performance
+---
+
+## 📈 Des résultats qui parlent
 
 <CardGroup cols={2}>
-  <Card title="Précision sectorielle" icon="target">
-    **95%** de réponses conformes aux standards métier
+  <Card title="Efficacité maximale" icon="rocket">
+    Jusqu’à **90% de précision** pour chaque rôle
   </Card>
-  <Card title="Temps de résolution" icon="clock">
-    **-70%** de durée moyenne de traitement
+  <Card title="Temps libéré" icon="clock">
+    **50% de tâches répétitives en moins**
   </Card>
-  <Card title="Satisfaction utilisateur" icon="smile">
-    **+50%** d'indice de satisfaction client
+  <Card title="Équipes ravies" icon="smile">
+    **+35% de satisfaction** dans les équipes
   </Card>
-  <Card title="ROI moyen" icon="chart-line">
-    **250%** de retour sur investissement annuel
+  <Card title="Retour rapide" icon="chart-line">
+    Impact visible dès **les premiers mois**
   </Card>
 </CardGroup>
 
-<Note>
-  Tous les agents respectent vos politiques de sécurité et peuvent être déployés on-premise ou dans votre cloud privé.
-</Note>
+---
+
+## ❓ FAQ — Tout ce que vous voulez savoir
+
+<AccordionGroup>
+<Accordion title="Les assistants remplacent-ils mes équipes ?">
+Pas du tout ! Ils **allègent les tâches répétitives** pour que vos équipes brillent sur ce qui compte vraiment.
+</Accordion>
+
+<Accordion title="Puis-je créer plusieurs assistants ?">
+Oui, créez **autant d’assistants que de rôles** dans votre entreprise, sans limite !
+</Accordion>
+
+<Accordion title="Combien de temps pour les mettre en place ?">
+En **quelques semaines**, vos premiers assistants sont prêts à changer la donne.
+</Accordion>
+</AccordionGroup>
+
+---
+
+## 💡 Lancez-vous dès aujourd’hui !
 
 <Tip>
-  Commencez par automatiser vos processus les plus répétitifs pour mesurer rapidement l'impact des agents IA.
+Commencez par un seul rôle, comme répondre aux clients ou organiser vos plannings. Vous verrez vite la différence avec un assistant IA dédié !  
+👉 Demandez une démo gratuite maintenant.
 </Tip>
