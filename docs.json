@@ -33,6 +33,15 @@
               "multimedia-ia",
               "roles"
             ]
+          },
+          {
+            "group": "Offres & Tarifs",
+            "pages": [
+              "overview",
+              "starter",
+              "pro",
+              "premium"
+            ]
           }
         ]
       },
