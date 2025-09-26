@@ -1,201 +1,154 @@
 ---
 title: "🎯 Fine-Tuning IA"
-description: "Personnalisation avancée des modèles d'intelligence artificielle pour des réponses ultra-précises adaptées à votre domaine"
+description: "Adaptez l’intelligence artificielle à votre métier pour obtenir des réponses précises, cohérentes et sécurisées"
 slug: "fine-tuning"
 image: "/images/fine-tuning-hero.jpg"
 ---
 
-<Frame>
-  <img src="/images/fine-tuning-hero.jpg" alt="Fine-Tuning IA - Personnalisation technique avancée" />
+<Frame caption="Votre IA, entraînée avec vos données">
+  <img src="/images/fine-tuning-hero.jpg" alt="Fine-Tuning IA - Personnalisation métier" />
 </Frame>
 
 # Fine-Tuning IA
 
-Adaptez techniquement les modèles d'intelligence artificielle à votre domaine d'activité pour obtenir des réponses ultra-précises et parfaitement alignées avec vos standards métier.
+Chaque entreprise a son propre langage, ses propres processus et ses propres exigences.  
+Le **fine-tuning** consiste à entraîner l’intelligence artificielle sur vos données spécifiques pour qu’elle **comprenne vos enjeux** et **réponde comme un expert de votre domaine**.  
 
-## Configuration technique
+---
 
-<CodeGroup>
-```python Configuration Python
-from transformers import AutoModelForCausalLM, AutoTokenizer
-import torch
+## Pourquoi choisir le fine-tuning ?
 
-# Chargement du modèle de base
-model_name = "meta-llama/Llama-2-7b-hf"
-model = AutoModelForCausalLM.from_pretrained(model_name)
-tokenizer = AutoTokenizer.from_pretrained(model_name)
+<CardGroup cols={3}>
+<Card title="Un langage adapté à votre métier" icon="message-circle">
+Votre IA parle le vocabulaire de vos équipes et de vos clients, sans approximation.
+</Card>
 
-# Configuration du fine-tuning
-training_config = {
-    "learning_rate": 2e-5,
-    "batch_size": 4,
-    "epochs": 3,
-    "lora_rank": 16,
-    "lora_alpha": 32
-}
-```
+<Card title="Précision et fiabilité" icon="target">
+Réponses contextualisées et conformes à vos standards internes.
+</Card>
 
-```javascript Configuration Node.js
-const { FineTuningJob } = require('openai');
+<Card title="Confidentialité garantie" icon="shield">
+Toutes vos données restent chiffrées et stockées sur vos serveurs, jamais à l’extérieur.
+</Card>
+</CardGroup>
 
-const fineTune = await openai.fineTuning.jobs.create({
-  training_file: 'file-abc123',
-  model: 'gpt-3.5-turbo',
-  hyperparameters: {
-    n_epochs: 4,
-    batch_size: 8,
-    learning_rate_multiplier: 2
-  }
-});
-```
-</CodeGroup>
+---
 
-## API d'intégration
-
-<ParamField path="model" type="string" required>
-  Identifiant du modèle de base à fine-tuner (ex: "llama-2-7b", "gpt-4")
-</ParamField>
-
-<ParamField body="training_data" type="file" required>
-  Fichier JSONL contenant les exemples d'entraînement au format {"prompt": "...", "completion": "..."}
-</ParamField>
-
-<ParamField query="epochs" type="integer" default="3">
-  Nombre d'époques d'entraînement (1-10)
-</ParamField>
-
-<ParamField header="Authorization" type="string" required>
-  Clé API pour l'authentification. Format: `Bearer YOUR_API_KEY`
-</ParamField>
-
-<RequestExample>
-```bash cURL
-curl -X POST 'https://api.privai.com/fine-tuning/jobs' \
-  -H 'Authorization: Bearer YOUR_API_KEY' \
-  -F 'model=llama-2-7b' \
-  -F 'training_data=@training_data.jsonl' \
-  -F 'epochs=4'
-```
-</RequestExample>
-
-<ResponseExample>
-```json Success
-{
-  "job_id": "ft-job-abc123",
-  "status": "queued",
-  "model": "llama-2-7b",
-  "created_at": "2024-01-15T10:30:00Z",
-  "estimated_completion": "2024-01-16T02:00:00Z",
-  "hyperparameters": {
-    "epochs": 4,
-    "batch_size": 8,
-    "learning_rate": 2e-5
-  }
-}
-```
-</ResponseExample>
-
-## Processus de déploiement
+## Comment ça fonctionne ?
 
 <Steps>
-<Step title="Préparation des données">
-  Nettoyez et formatez vos données métier selon nos spécifications.
-
-  <Check>
-    Format JSONL requis avec champs "prompt" et "completion"
-  </Check>
+<Step title="1. Préparation des données">
+Nous sélectionnons et structurons vos exemples métiers (procédures, documents, cas d’usage…).
 </Step>
 
-<Step title="Configuration du modèle">
-  Choisissez le modèle de base et les hyperparamètres optimaux.
-
-  ```python
-  # Exemple de configuration optimale
-  config = {
-      "model": "llama-3.1-8b",
-      "learning_rate": 1e-5,
-      "lora_config": {
-          "r": 16,
-          "lora_alpha": 32,
-          "target_modules": ["q_proj", "v_proj"]
-      }
-  }
-  ```
-
-  <Warning>
-    Un learning rate trop élevé peut causer un overfitting des données d'entraînement.
-  </Warning>
+<Step title="2. Entraînement du modèle">
+L’IA apprend à partir de ces données pour mieux comprendre vos besoins spécifiques.
 </Step>
 
-<Step title="Entraînement et monitoring">
-  Lancez l'entraînement avec suivi en temps réel des métriques.
+<Step title="3. Déploiement sécurisé">
+Le modèle personnalisé est installé directement sur votre infrastructure, sans fuite d’informations.
+</Step>
 
-  <ResponseField name="training_progress" type="object">
-    Métriques de progression de l'entraînement
-
-    <Expandable title="Détails des métriques">
-      <ResponseField name="loss" type="number">
-        Valeur de la fonction de perte (doit diminuer progressivement)
-      </ResponseField>
-
-      <ResponseField name="accuracy" type="number">
-        Précision sur les données de validation
-      </ResponseField>
-
-      <ResponseField name="perplexity" type="number">
-        Mesure de la qualité des prédictions du modèle
-      </ResponseField>
-    </Expandable>
-  </ResponseField>
+<Step title="4. Amélioration continue">
+Nous suivons ses performances et ajustons l’entraînement pour une efficacité maximale.
 </Step>
 </Steps>
 
-## Exemples sectoriels
+---
+
+## Exemples concrets par secteur
 
 <Tabs>
 <Tab title="Banque & Assurance">
-```json Données d'entraînement
-{"prompt": "Évaluer ce dossier de prêt immobilier", "completion": "Dossier complet. Revenus stables. Capacité d'endettement: 35%. Risque: Faible. Recommandation: Accord sous conditions."}
-{"prompt": "Procédure réclamation sinistre", "completion": "1. Vérifier police valide 2. Analyser circonstances 3. Évaluer dommages 4. Calculer indemnisation selon barème contractuel"}
-```
+- Analyse rapide de dossiers de prêt  
+- Automatisation des procédures de réclamation  
+- Assistance conformité réglementaire
 </Tab>
 
 <Tab title="Santé & Médical">
-```json Données médicales
-{"prompt": "Symptômes: fièvre, toux, fatigue", "completion": "Signes grippaux possibles. Recommandations: Repos, hydratation, paracétamol. Consultation si aggravation."}
-{"prompt": "Prescription antibiotiques", "completion": "Respecter indications: infection bactérienne confirmée. Durée optimale: 7-10 jours. Surveillance effets secondaires."}
-```
+- Aide au diagnostic préliminaire (à usage interne)  
+- Synthèse de dossiers patients  
+- Rédaction de recommandations médicales
 </Tab>
 
 <Tab title="Juridique & Compliance">
-```json Données juridiques
-{"prompt": "Rédiger contrat de service", "completion": "Inclure: Parties, Objet, Obligations, Prix, Durée, Résiliation, Juridiction. Respecter Code Civil articles 1101 et suivants."}
-{"prompt": "RGPD données personnelles", "completion": "Base légale requise. Consentement explicite. Droit accès/modification/suppression. Registre traitements obligatoire."}
-```
+- Génération de contrats conformes au Code civil  
+- Veille réglementaire automatisée  
+- Vérification de conformité RGPD
 </Tab>
 </Tabs>
 
 <Note>
-  Toutes les données d'entraînement sont chiffrées et restent sur votre infrastructure. Aucun transfert externe.
+Chaque exemple est construit avec vos propres données. L’IA reste **sous votre contrôle** et respecte vos règles internes.
 </Note>
 
-<Tip>
-  Commencez avec un dataset de 1000+ exemples de haute qualité pour des résultats optimaux.
-</Tip>
+---
 
-## Métriques de performance
+## Les bénéfices mesurables
 
 <CardGroup cols={2}>
-  <Card title="Précision domaine" icon="target">
-    **+85%** de réponses conformes à vos standards métier
+  <Card title="+85% de précision" icon="target">
+    Réponses adaptées et alignées sur vos standards métier.
   </Card>
-  <Card title="Réduction erreurs" icon="shield">
-    **-90%** d'erreurs par rapport aux modèles généralistes
+  <Card title="-90% d’erreurs" icon="shield">
+    Réduction des approximations par rapport à une IA générique.
   </Card>
-  <Card title="Temps réponse" icon="zap">
-    Maintien des performances temps réel (<200ms)
+  <Card title="Temps réel" icon="zap">
+    Réponses instantanées, même sur des bases de données volumineuses.
   </Card>
-  <Card title="ROI moyen" icon="chart-line">
-    **300%** de retour sur investissement en 12 mois
+  <Card title="ROI x3" icon="chart-line">
+    Retour sur investissement constaté en moins de 12 mois.
   </Card>
 </CardGroup>
+
+---
+
+## En résumé
+
+Le fine-tuning vous permet de transformer une IA générique en **expert virtuel** de votre secteur.  
+Avec privAI, vous bénéficiez d’une solution **sécurisée, personnalisée et évolutive**, qui respecte vos données et s’intègre directement à vos outils internes.
+
+<Tip>
+Le succès du fine-tuning repose sur la qualité de vos données : plus vos exemples sont clairs et représentatifs, plus l’IA sera performante.
+</Tip>
+
+---
+
+## Prêt à entraîner votre IA ? 🚀
+
+<Steps>
+<Step title="Évaluez vos besoins">
+Quels processus gagneraient en efficacité avec une IA spécialisée ?
+</Step>
+<Step title="Partagez vos données métier">
+Vos documents et cas d’usage alimentent l’apprentissage.
+</Step>
+<Step title="Lancez votre projet">
+Nous déployons l’IA fine-tunée dans votre environnement sécurisé.
+</Step>
+</Steps>
+
+👉 [Contactez notre équipe](/contact) pour démarrer votre projet de fine-tuning.
+
+---
+
+## Questions fréquentes ❓
+
+<AccordionGroup>
+<Accordion title="Combien de données faut-il pour un bon fine-tuning ?">
+Nous recommandons au minimum **1000 exemples de qualité**. Plus les données sont représentatives de votre métier, meilleurs seront les résultats.
+</Accordion>
+
+<Accordion title="Combien de temps dure le processus ?">
+En moyenne, un projet complet prend entre **2 et 6 semaines**, selon la préparation des données et la complexité du domaine.
+</Accordion>
+
+<Accordion title="Où sont stockées mes données ?">
+Toutes vos données restent **sur vos serveurs**, chiffrées de bout en bout. Rien n’est transféré vers l’extérieur.
+</Accordion>
+
+<Accordion title="Quels secteurs peuvent en bénéficier ?">
+Banque, assurance, santé, juridique, retail, industrie…  
+Toute organisation qui a besoin de réponses fiables et contextualisées.
+</Accordion>
+</AccordionGroup>
