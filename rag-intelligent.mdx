@@ -5,34 +5,62 @@ slug: "rag-intelligent"
 image: "/images/rag-hero.jpg"
 ---
 
-<Frame>
-  <img src="/images/rag-hero.jpg" alt="RAG Intelligent - Recherche documentaire augmentée" />
+<Frame caption="Votre IA alimentée par vos propres documents">
+  <video
+    controls
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="w-full aspect-video rounded-xl"
+    src="./public/videos/demo_rag_4k.mp4"
+  />
 </Frame>
 
-# RAG Intelligent
+# 🔍 IA Augmentée par vos documents
 
-Améliorez vos applications IA avec notre système de Retrieval-Augmented Generation qui combine recherche sémantique et génération de réponses contextuelles.
+Imaginez un assistant capable de répondre **précisément à toutes vos questions**, en se basant directement sur vos propres documents : manuels, procédures, guides, rapports internes…  
 
-## Fonctionnement technique
+Notre technologie de **Recherche et Génération Augmentée** combine l’analyse intelligente de vos contenus avec la puissance d’un moteur de réponses IA :  
+- Elle **lit et comprend vos documents** pour identifier l’information la plus pertinente.  
+- Elle **génère des réponses claires et personnalisées**, adaptées à votre entreprise et à vos besoins.  
 
-<AccordionGroup>
-  <Accordion title="Recherche sémantique avancée">
-    Notre système analyse vos documents pour identifier les informations les plus pertinentes grâce à des embeddings vectoriels et des algorithmes de similarité.
+Fini les réponses génériques ou approximatives : vos équipes et vos clients obtiennent **des informations fiables et pertinentes, instantanément**.  
 
-    <Check>
-      Recherche précise dans tous types de documents : PDF, Word, Excel, code source.
-    </Check>
-  </Accordion>
+Que ce soit pour des chatbots, des assistants virtuels ou des outils d’analyse documentaire, cette solution transforme vos données en **un moteur de connaissances intelligent** à votre service.
+## Processus RAG étape par étape
 
-  <Accordion title="Génération augmentée contextuelle">
-    Les informations récupérées servent de contexte pour générer des réponses précises et personnalisées adaptées à votre domaine.
+<Steps>
+  <Step title="1. Ingestion des documents">
+    Collectez et centralisez tous vos documents : PDF, Word, Excel, e-mails, code source.
+    <Check>Préparer les documents avec métadonnées : auteur, date, catégorie.</Check>
+  </Step>
 
-    <Check>
-      Réduction significative des réponses génériques ou incorrectes.
-    </Check>
-  </Accordion>
-</AccordionGroup>
+  <Step title="2. Vectorisation et indexation">
+    Transformez le texte en embeddings vectoriels à l'aide des modèles OpenAI ou autres.
+    <Check>Créez un index vectoriel pour permettre la recherche rapide par similarité.</Check>
+  </Step>
 
+  <Step title="3. Recherche contextuelle">
+    Lorsqu'une question est posée, le moteur recherche les documents les plus pertinents via des mesures de similarité.
+    <Check>Retourner uniquement les passages les plus pertinents pour le contexte.</Check>
+  </Step>
+
+  <Step title="4. Génération augmentée">
+    Utilisez les passages récupérés comme contexte pour générer une réponse IA précise et adaptée.
+    <Check>Réduction des réponses génériques ou incorrectes grâce à la contextualisation.</Check>
+  </Step>
+
+  <Step title="5. Retour et apprentissage continu">
+    Les réponses peuvent être annotées ou validées pour améliorer le modèle et l'index.
+    <Check>Mise à jour automatique de l'index et ajustement du scoring.</Check>
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="images/rag_chart.png" alt="Descriptive alt text" />
+</Frame>
+__________________
 ## Avantages clés
 
 <CardGroup cols={2}>
@@ -60,69 +88,84 @@ Améliorez vos applications IA avec notre système de Retrieval-Augmented Genera
   </Tab>
 
   <Tab title="Modèles IA">
-    - **Llama Index** : Framework de recherche documentaire
-    - **GPT-4/Llama 3** : Génération de réponses contextuelles
+    - **Llama Index** : Framework de recherche documentaire  
+    - **GPT-4/Llama 3** : Génération de réponses contextuelles  
     - **Fine-tuning** : Adaptation à votre vocabulaire métier
   </Tab>
 
   <Tab title="APIs & Intégration">
-    - **RESTful APIs** : Intégration transparente
-    - **SDK Python/Node.js** : Développement facilité
+    - **RESTful APIs** : Intégration transparente  
+    - **SDK Python/Node.js** : Développement facilité  
     - **Webhooks** : Notifications en temps réel
   </Tab>
 </Tabs>
 
-## Applications pratiques
+## Exemples concrets
 
-<Steps>
-  <Step title="Chatbots spécialisés">
-    Réponses basées sur votre documentation technique ou commerciale.
-  </Step>
-  <Step title="Assistants virtuels">
-    Support technique et commercial personnalisé 24/7.
-  </Step>
-  <Step title="Analyse documentaire">
-    Recherche intelligente dans vos bases de connaissances.
-  </Step>
-  <Step title="Systèmes experts">
-    Réponses précises pour vos domaines métier spécifiques.
-  </Step>
-</Steps>
+<AccordionGroup>
+  <Accordion title="Validation des commandes internationales">
+    **Question utilisateur :** "Quelle est la procédure de validation des commandes internationales ?"  
 
-## Exemple d'utilisation
+    **Documents analysés :** manuel qualité, procédures douanières, réglementations internationales  
 
-<Expandable title="Voir un exemple concret">
-  **Question utilisateur :** "Quelle est la procédure de validation des commandes internationales ?"
+    **Réponse générée :**  
+    "Selon la procédure Q-PROC-INT-001, la validation des commandes internationales implique :  
+    1. Vérification de la conformité douanière (document DOUAN-2024)  
+    2. Validation des incoterms applicables  
+    3. Contrôle des licences d'exportation requises  
 
-  **Documents analysés :** Manuel qualité, procédures douanières, réglementations internationales
+    Durée estimée : 2-3 jours ouvrés."
+  </Accordion>
 
-  **Réponse générée :**
-  "Selon la procédure Q-PROC-INT-001, la validation des commandes internationales nécessite :
-  1. Vérification de la conformité douanière (document DOUAN-2024)
-  2. Validation des incoterms applicables
-  3. Contrôle des licences d'exportation requises
+  <Accordion title="Procédure de recrutement interne">
+    **Question utilisateur :** "Comment se déroule le processus de recrutement interne ?"  
 
-  Durée estimée : 2-3 jours ouvrés."
-</Expandable>
+    **Documents analysés :** guide RH, politiques internes, formulaires d'évaluation  
+
+    **Réponse générée :**  
+    "Le processus de recrutement interne inclut :  
+    1. Soumission de la candidature via le portail interne  
+    2. Entretien avec le responsable de département  
+    3. Validation par le service RH et mise à jour de la fiche de poste  
+
+    Durée estimée : 1-2 semaines."
+  </Accordion>
+
+  <Accordion title="Accès aux informations financières">
+    **Question utilisateur :** "Comment obtenir un rapport financier trimestriel ?"  
+
+    **Documents analysés :** procédures comptables, guides ERP, politiques de confidentialité  
+
+    **Réponse générée :**  
+    "Pour obtenir un rapport financier trimestriel :  
+    1. Connectez-vous au portail ERP avec vos identifiants  
+    2. Sélectionnez la période et le type de rapport  
+    3. Exportez le document au format PDF ou Excel  
+
+    Délai moyen : immédiat après génération."
+  </Accordion>
+
+  <Accordion title="Support technique interne">
+    **Question utilisateur :** "Comment résoudre une panne d'imprimante réseau ?"  
+
+    **Documents analysés :** guide IT, procédures de maintenance, tickets précédents  
+
+    **Réponse générée :**  
+    "Étapes pour résoudre une panne d'imprimante réseau :  
+    1. Vérifiez la connexion réseau et l’alimentation  
+    2. Redémarrez le serveur d’impression  
+    3. Consultez les journaux d’erreurs et appliquez les correctifs documentés  
+
+    Résolution estimée : 30-60 minutes selon la complexité."
+  </Accordion>
+</AccordionGroup>
+
+_____________
 
 <Note>
-Le RAG intelligent nécessite une base de documents structurée pour des performances optimales. Nous accompagnons la mise en place de votre index documentaire.
+Pour des performances optimales, le RAG nécessite une base de documents structurée et bien organisée. Nous accompagnons la mise en place de votre index documentaire.
 </Note>
 
 <Tip>
-Pour maximiser l'efficacité, organisez vos documents avec des métadonnées riches (auteur, date, catégorie, mots-clés).
+Maximisez l’efficacité en enrichissant vos documents avec des métadonnées : auteur, date, catégorie, mots-clés.
 </Tip>
-
-## Intégration avec vos services
-
-<CardGroup cols={3}>
-  <Card title="Chatbot IA" icon="message-circle" href="/chatbot-ia">
-    Enrichissez vos assistants conversationnels avec des réponses documentées.
-  </Card>
-  <Card title="Analyse multimodale" icon="eye" href="/analyse-multimodale">
-    Combinez recherche textuelle et analyse d'images/audio.
-  </Card>
-  <Card title="Sécurité" icon="shield" href="/security">
-    Chiffrement et contrôle d'accès intégrés.
-  </Card>
-</CardGroup>
