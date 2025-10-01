@@ -93,18 +93,8 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://innovai-solutions.com/docs",
-          "icon": "book-open-text"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://innovai-solutions.com/blog",
-          "icon": "newspaper"
-        },
-        {
           "anchor": "Support",
-          "href": "mailto:support@innovai-solutions.com",
+          "href": "mathieu.bosse@gmail.com",
           "icon": "mail"
         }
       ]
@@ -118,19 +108,17 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@innovai-solutions.com"
+        "href": "mathieu.bosse@gmail.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Démarrer",
-      "href": "https://app.innovai-solutions.com"
+      "label": "Réserver une démo",
+      "href": "https://calendly.com/mathieu-hireme/new-meeting"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
      "chatgpt",
      "claude",
      "perplexity",
@@ -141,8 +129,6 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/innovai_solutions",
-      "github": "https://github.com/innovai-solutions",
       "linkedin": "https://linkedin.com/company/innovai-solutions"
     }
   }
