@@ -111,8 +111,8 @@
     }
   },
   "logo": {
-    "light": "/logo/PrivAI.png",
-    "dark": "/logo/PrivAI.png"
+    "light": "/logo/logo_recadre.png",
+    "dark": "/logo/logo_recadre_blanc.png"
   },
   "navbar": {
     "links": [
