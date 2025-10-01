@@ -1,0 +1,168 @@
+---
+title: "🔍 Intelligent RAG"
+description: "Search and generation augmented system for contextual and precise responses"
+slug: "intelligent-rag"
+image: "/images/rag-hero.jpg"
+---
+
+<Frame caption="Your AI powered by your own documents">
+  <video
+    controls
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="w-full aspect-video rounded-xl"
+    src="./public/videos/demo_rag_4k.mp4"
+  />
+</Frame>
+
+# AI Augmented by your documents
+
+Imagine an assistant capable of responding **precisely to all your questions**, based directly on your own documents: manuals, procedures, guides, internal reports...
+
+Our **Retrieval and Augmented Generation** technology combines intelligent analysis of your content with the power of a generative AI response engine:  
+- It **reads and understands your documents** to identify the most relevant information.  
+- It **generates clear and personalized responses**, adapted to your business and your needs.  
+
+No more generic or approximate responses: your teams and your customers obtain **reliable and relevant information, instantly**.  
+
+Whether for chatbots, virtual assistants, or document analysis tools, this solution transforms your data into an **intelligent knowledge engine** at your service.
+
+## RAG process step by step
+
+<Steps>
+  <Step title="1. Document ingestion">
+    Collect and centralize all your documents: PDF, Word, Excel, emails, code source.
+    <Check>Prepare documents with metadata: author, date, category.</Check>
+  </Step>
+
+  <Step title="2. Vectorization and indexing">
+    Transform text into vector embeddings using OpenAI or other models.
+    <Check>Create a vector index for fast similarity search.</Check>
+  </Step>
+
+  <Step title="3. Contextual search">
+    When a question is asked, the engine searches the most relevant documents via similarity measures.
+    <Check>Return only the most relevant passages for the context.</Check>
+  </Step>
+
+  <Step title="4. Augmented generation">
+    Use the retrieved passages as context to generate a precise AI response.
+    <Check>Reduce generic or incorrect responses through contextualization.</Check>
+  </Step>
+
+  <Step title="5. Feedback and continuous learning">
+    Responses can be annotated or validated to improve the model and index.
+    <Check>Automatic index update and scoring adjustment.</Check>
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="images/rag_chart.png" alt="Descriptive alt text" />
+</Frame>
+
+## Key advantages
+
+<CardGroup cols={2}>
+  <Card title="Guaranteed precision" icon="target">
+    Responses based exclusively on your real and verified data.
+  </Card>
+  <Card title="Maximum security" icon="shield">
+    All your data remains on your servers, never externalized.
+  </Card>
+  <Card title="Automatic updates" icon="sync">
+    Seamless integration of new documents without interruption.
+  </Card>
+  <Card title="Optimized performance" icon="zap">
+    Instant search even in large volumes of data.
+  </Card>
+</CardGroup>
+
+## Technologies used
+
+<Tabs>
+  <Tab title="Vector base">
+    - **Pinecone/Chroma**: High-performance vector storage and search
+    - **OpenAI Embeddings**: Advanced semantic vectorization
+    - **Automatic indexing**: Real-time document updates
+  </Tab>
+
+  <Tab title="AI models">
+    - **Llama Index**: Document search framework
+    - **GPT-4/Llama 3**: Contextual response generation
+    - **Fine-tuning**: Adaptation to your business vocabulary
+  </Tab>
+
+  <Tab title="APIs & Integration">
+    - **RESTful APIs**: Seamless integration
+    - **Python/Node.js SDKs**: Easy development
+    - **Webhooks**: Real-time notifications
+  </Tab>
+</Tabs>
+
+## Concrete examples
+
+<AccordionGroup>
+<Accordion title="International order validation">
+  **User question:** "What is the procedure for validating international orders?"  
+
+  **Analyzed documents:** quality manual, customs procedures, international regulations  
+
+  **Generated response:**  
+  "According to the Q-PROC-INT-001 procedure, international order validation involves:  
+  1. Verification of customs compliance (DOUAN-2024 document)  
+  2. Applicable incoterms validation  
+  3. Required export license control  
+
+  Estimated duration: 2-3 working days."
+</Accordion>
+
+<Accordion title="Internal recruitment procedure">
+  **User question:** "How does the internal recruitment process work?"  
+
+  **Analyzed documents:** HR guide, internal policies, evaluation forms  
+
+  **Generated response:**  
+  "The internal recruitment process includes:  
+  1. Submission of application via internal portal  
+  2. Interview with department manager  
+  3. HR department validation and job profile update  
+
+  Estimated duration: 1-2 weeks."
+</Accordion>
+
+<Accordion title="Access to financial information">
+  **User question:** "How to obtain a quarterly financial report?"  
+
+  **Analyzed documents:** accounting procedures, ERP guides, confidentiality policies  
+
+  **Generated response:**  
+  "To obtain a quarterly financial report:  
+  1. Log in to the ERP portal with your credentials  
+  2. Select the period and report type  
+  3. Export the document in PDF or Excel format  
+
+  Average delay: immediate after generation."
+</Accordion>
+
+<Accordion title="Internal technical support">
+  **User question:** "How to resolve a network printer failure?"  
+
+  **Analyzed documents:** IT guide, maintenance procedures, previous tickets  
+
+  **Generated response:**  
+  "Steps to resolve a network printer failure:  
+  1. Check network connection and power  
+  2. Restart the print server  
+  3. Consult error logs and apply documented fixes  
+
+  Estimated resolution: 30-60 minutes depending on complexity."
+</Accordion>
+</AccordionGroup>
+
+## For optimal performance, the RAG requires a structured and well-organized document base. We accompany the implementation of your document index.
+
+<Tip>
+Maximize efficiency by enriching your documents with metadata: author, date, category, keywords.
+</Tip>

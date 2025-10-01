@@ -12,46 +12,79 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Entreprise",
+        "language": "en",
         "groups": [
           {
-            "group": "Informations générales",
+            "group": "General Information",
             "pages": [
-              "accueil",
-              "a-propos",
-              "equipe"
+              "en/home",
+              "en/about",
+              "en/team"
             ]
           },
           {
-            "group": "Nos fonctionnalités IA",
+            "group": "AI Features",
             "pages": [
-              "chatbot-ia",
-              "rag-intelligent",
-              "fine-tuning",
-              "multimedia-ia",
-              "roles"
+              "en/ai-chatbot",
+              "en/intelligent-rag",
+              "en/fine-tuning",
+              "en/multimedia-ai",
+              "en/roles"
             ]
           },
           {
-            "group": "Offres & Tarifs",
+            "group": "Plans & Pricing",
             "pages": [
-              "overview",
-              "starter",
-              "pro",
-              "premium"
+              "en/pricing",
+              "en/starter",
+              "en/pro",
+              "en/premium"
+            ]
+          },
+          {
+            "group": "Contact",
+            "pages": [
+              "en/contact"
             ]
           }
         ]
       },
       {
-        "tab": "Contact",
+        "language": "fr",
         "groups": [
           {
-            "group": "Nous contacter",
+            "group": "Informations générales",
             "pages": [
-              "contact"
+              "fr/accueil",
+              "fr/a-propos",
+              "fr/equipe"
+            ]
+          },
+          {
+            "group": "Nos fonctionnalités IA",
+            "pages": [
+              "fr/chatbot-ia",
+              "fr/rag-intelligent",
+              "fr/fine-tuning",
+              "fr/multimedia-ia",
+              "fr/roles"
+            ]
+          },
+          {
+            "group": "Offres & Tarifs",
+            "pages": [
+              "fr/overview",
+              "fr/starter",
+              "fr/pro",
+              "fr/premium"
+            ]
+          },
+          {
+            "group": "Contact",
+            "pages": [
+              "fr/contact"
             ]
           }
         ]
@@ -78,8 +111,8 @@
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/PrivAI.png",
+    "dark": "/logo/PrivAI.png"
   },
   "navbar": {
     "links": [
