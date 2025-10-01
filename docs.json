@@ -15,76 +15,96 @@
     "languages": [
       {
         "language": "en",
-        "groups": [
+        "tabs": [
           {
-            "group": "General Information",
-            "pages": [
-              "en/home",
-              "en/about",
-              "en/team"
+            "tab": "Enterprise",
+            "groups": [
+              {
+                "group": "General Information",
+                "pages": [
+                  "en/home",
+                  "en/about",
+                  "en/team"
+                ]
+              },
+              {
+                "group": "AI Features",
+                "pages": [
+                  "en/ai-chatbot",
+                  "en/intelligent-rag",
+                  "en/fine-tuning",
+                  "en/multimedia-ai",
+                  "en/roles"
+                ]
+              },
+              {
+                "group": "Plans & Pricing",
+                "pages": [
+                  "en/pricing",
+                  "en/starter",
+                  "en/pro",
+                  "en/premium"
+                ]
+              }
             ]
           },
           {
-            "group": "AI Features",
-            "pages": [
-              "en/ai-chatbot",
-              "en/intelligent-rag",
-              "en/fine-tuning",
-              "en/multimedia-ai",
-              "en/roles"
-            ]
-          },
-          {
-            "group": "Plans & Pricing",
-            "pages": [
-              "en/pricing",
-              "en/starter",
-              "en/pro",
-              "en/premium"
-            ]
-          },
-          {
-            "group": "Contact",
-            "pages": [
-              "en/contact"
+            "tab": "Contact",
+            "groups": [
+              {
+                "group": "Contact",
+                "pages": [
+                  "en/contact"
+                ]
+              }
             ]
           }
         ]
       },
       {
         "language": "fr",
-        "groups": [
+        "tabs": [
           {
-            "group": "Informations générales",
-            "pages": [
-              "fr/accueil",
-              "fr/a-propos",
-              "fr/equipe"
+            "tab": "Entreprise",
+            "groups": [
+              {
+                "group": "Informations générales",
+                "pages": [
+                  "fr/accueil",
+                  "fr/a-propos",
+                  "fr/equipe"
+                ]
+              },
+              {
+                "group": "Nos fonctionnalités IA",
+                "pages": [
+                  "fr/chatbot-ia",
+                  "fr/rag-intelligent",
+                  "fr/fine-tuning",
+                  "fr/multimedia-ia",
+                  "fr/roles"
+                ]
+              },
+              {
+                "group": "Offres & Tarifs",
+                "pages": [
+                  "fr/overview",
+                  "fr/starter",
+                  "fr/pro",
+                  "fr/premium"
+                ]
+              }
             ]
           },
           {
-            "group": "Nos fonctionnalités IA",
-            "pages": [
-              "fr/chatbot-ia",
-              "fr/rag-intelligent",
-              "fr/fine-tuning",
-              "fr/multimedia-ia",
-              "fr/roles"
-            ]
-          },
-          {
-            "group": "Offres & Tarifs",
-            "pages": [
-              "fr/overview",
-              "fr/starter",
-              "fr/pro",
-              "fr/premium"
-            ]
-          },
-          {
-            "group": "Contact",
-            "pages": [
-              "fr/contact"
+            "tab": "Contact",
+            "groups": [
+              {
+                "group": "Contact",
+                "pages": [
+                  "fr/contact"
+                ]
+              }
             ]
           }
         ]
@@ -94,7 +114,7 @@
       "anchors": [
         {
           "anchor": "Support",
-          "href": "mathieu.bosse@gmail.com",
+          "href": "mailto:mathieu.bosse@gmail.com",
           "icon": "mail"
         }
       ]
@@ -108,7 +128,7 @@
     "links": [
       {
         "label": "Support",
-        "href": "mathieu.bosse@gmail.com"
+        "href": "mailto:mathieu.bosse@gmail.com"
       }
     ],
     "primary": {
@@ -119,12 +139,12 @@
   },
   "contextual": {
     "options": [
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
     ]
   },
   "footer": {
