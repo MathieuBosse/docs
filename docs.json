@@ -10,7 +10,10 @@
   "icons": {
     "library": "lucide"
   },
-  "favicon": "/favicon.png",
+  "favicon": {
+    "light": "favicon_light.png",
+    "dark": "favicon_dark.png"
+  },
   "navigation": {
     "languages": [
       {
