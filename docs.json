@@ -14,54 +14,6 @@
   "navigation": {
     "languages": [
       {
-        "language": "en",
-        "tabs": [
-          {
-            "tab": "Enterprise",
-            "groups": [
-              {
-                "group": "General Information",
-                "pages": [
-                  "en/home",
-                  "en/about",
-                  "en/team"
-                ]
-              },
-              {
-                "group": "AI Features",
-                "pages": [
-                  "en/ai-chatbot",
-                  "en/intelligent-rag",
-                  "en/fine-tuning",
-                  "en/multimedia-ai",
-                  "en/roles"
-                ]
-              },
-              {
-                "group": "Plans & Pricing",
-                "pages": [
-                  "en/pricing",
-                  "en/starter",
-                  "en/pro",
-                  "en/premium"
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "Contact",
-            "groups": [
-              {
-                "group": "Contact",
-                "pages": [
-                  "en/contact"
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
         "language": "fr",
         "tabs": [
           {
@@ -103,6 +55,54 @@
                 "group": "Contact",
                 "pages": [
                   "fr/contact"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "language": "en",
+        "tabs": [
+          {
+            "tab": "Enterprise",
+            "groups": [
+              {
+                "group": "General Information",
+                "pages": [
+                  "en/home",
+                  "en/about",
+                  "en/team"
+                ]
+              },
+              {
+                "group": "AI Features",
+                "pages": [
+                  "en/ai-chatbot",
+                  "en/intelligent-rag",
+                  "en/fine-tuning",
+                  "en/multimedia-ai",
+                  "en/roles"
+                ]
+              },
+              {
+                "group": "Plans & Pricing",
+                "pages": [
+                  "en/pricing",
+                  "en/starter",
+                  "en/pro",
+                  "en/premium"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Contact",
+            "groups": [
+              {
+                "group": "Contact",
+                "pages": [
+                  "en/contact"
                 ]
               }
             ]
