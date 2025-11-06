@@ -47,20 +47,15 @@
                     "group": "Offres",
                     "pages": [
                       "fr/overview",
-                      {
-                        "group": "Plans",
-                        "pages": [
-                          "fr/starter",
-                          "fr/pro",
-                          "fr/premium"
-                        ]
-                      },
-                      {
-                        "group": "Tarifs",
-                        "pages": [
-                          "fr/pricing"
-                        ]
-                      }
+                      "fr/starter",
+                      "fr/pro",
+                      "fr/premium"
+                    ]
+                  },
+                  {
+                    "group": "Tarifs",
+                    "pages": [
+                      "fr/pricing"
                     ]
                   }
                 ]
@@ -193,3 +188,4 @@
     }
   }
 }
+
