@@ -105,6 +105,7 @@
                   {
                     "group": "Plans",
                     "pages": [
+                      "en/overview",
                       "en/starter",
                       "en/pro",
                       "en/premium"
